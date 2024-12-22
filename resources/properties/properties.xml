@@ -1,0 +1,8 @@
+<resources>
+    <properties>
+        <property id="api_url_prop" type="string"></property>
+        <property id="api_key_prop" type="string"></property>
+        <property id="option_1_prop" type="string">Option 1</property>
+        <property id="option_2_prop" type="string">Option 2</property>
+    </properties>
+</resources>

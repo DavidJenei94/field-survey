@@ -1,0 +1,16 @@
+<resources>
+    <settings>
+        <setting propertyKey="@Properties.api_url_prop" title="@Strings.api_url">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.api_key_prop" title="@Strings.api_key">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.option_1_prop" title="@Strings.option_1">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+        <setting propertyKey="@Properties.option_2_prop" title="@Strings.option_2">
+            <settingConfig type="alphaNumeric" />
+        </setting>
+    </settings>
+</resources>

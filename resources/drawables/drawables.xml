@@ -1,0 +1,29 @@
+<drawables>
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <drawable-list id="ClickAreas" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="0%" width="100%" height="25%" color="0x0055AA"/>
+        <shape type="rectangle" x="0%" y="75%" width="100%" height="25%" color="0x0055AA"/>
+        <shape type="rectangle" x="0%" y="25%" width="100%" height="50%" color="0x000000"/>
+    </drawable-list>
+    <drawable-list id="Divider1" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="49%" width="100%" height="2%" color="0x0055AA"/>
+    </drawable-list>
+    <drawable-list id="StartSelected" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="25%" width="100%" height="2%" color="0xAAAA00"/>
+    </drawable-list>
+    <drawable-list id="Option1_1Selected" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="25%" width="100%" height="2%" color="0xAAAA00"/>
+        <shape type="rectangle" x="0%" y="74%" width="100%" height="2%" color="0xAAAA00"/>
+    </drawable-list>
+    <drawable-list id="Option1_2Selected" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="25%" width="100%" height="2%" color="0xAAAA00"/>
+        <shape type="rectangle" x="0%" y="49%" width="100%" height="2%" color="0xAAAA00"/>
+    </drawable-list>
+    <drawable-list id="Option2_2Selected" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="49%" width="100%" height="2%" color="0xAAAA00"/>
+        <shape type="rectangle" x="0%" y="74%" width="100%" height="2%" color="0xAAAA00"/>
+    </drawable-list>
+    <drawable-list id="EndSelected" background="Graphics.COLOR_TRANSPARENT">
+        <shape type="rectangle" x="0%" y="74%" width="100%" height="2%" color="0xAAAA00"/>
+    </drawable-list>
+</drawables>

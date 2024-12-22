@@ -1,0 +1,14 @@
+<strings>
+    <string id="AppName">Field Survey</string>
+    <string id="AppVersion">0.0.1</string>
+
+    <string id="api_url">Api url (data is sent to this url)</string>
+    <string id="api_key">Api key (custom api key for authentication on your server)</string>
+    <string id="option_1">Option 1 text/value</string>
+    <string id="option_2">Option 2 text/value</string>
+
+    <string id="menu_label_sync">Sync</string>
+    <string id="menu_label_clear">Clear</string>
+
+    <string id="end">End</string>
+</strings>

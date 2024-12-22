@@ -1,0 +1,4 @@
+<menu id="MainMenu">
+    <menu-item id="item_sync" label="@Strings.menu_label_sync" />
+    <menu-item id="item_clear" label="@Strings.menu_label_clear" />
+</menu>

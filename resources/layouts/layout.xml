@@ -1,0 +1,17 @@
+<layout id="MainLayout">
+    <drawable id="ClickAreas" />
+    <drawable id="Divider1" />
+
+    <button x="0%" y="0%" width="100%" height="25%" background="Graphics.COLOR_BLACK" behavior="startSurvey" />
+    <button x="0%" y="25%" width="100%" height="25%" background="Graphics.COLOR_BLACK" behavior="addEntry1" />
+    <button x="0%" y="50%" width="100%" height="25%" background="Graphics.COLOR_BLACK" behavior="addEntry2" />
+    <button x="0%" y="75%" width="100%" height="25%" background="Graphics.COLOR_BLACK" behavior="endSurvey" />
+
+    <drawable id="StartSelected" />
+    <drawable id="Option1_1Selected" />
+    <drawable id="Option1_2Selected" />
+    <drawable id="Option2_2Selected" />
+    <drawable id="EndSelected" />
+
+    <label id="EndLabel" text="@Strings.end" x="50%" y="86%" color="Graphics.COLOR_WHITE" font="Graphics.FONT_TINY" justification="Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER" />
+</layout>
