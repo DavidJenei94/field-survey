@@ -74,3 +74,11 @@ class FieldSurveyApp extends Application.AppBase {
 function getApp() as FieldSurveyApp {
     return Application.getApp() as FieldSurveyApp;
 }
+
+function isApiUrlSet() as Boolean {
+    return !apiUrlProp.equals("");
+}
+
+function isGpsValid() as Boolean {
+    return Position.getInfo().accuracy >= Position.QUALITY_USABLE;
+}

@@ -2,6 +2,7 @@ import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.System;
 import Toybox.Position;
+import Toybox.Timer;
 
 class FieldSurveyView extends WatchUi.View {
 
@@ -19,8 +20,15 @@ class FieldSurveyView extends WatchUi.View {
     var option1_2Label as Text?;
     var option2_2Label as Text?;
 
+    // No GPS dot counter
+    var noGpsDotCounter = 1;
+
     function initialize() {
         View.initialize();
+
+        // Timer for No GPS "..."
+        var dotTimer = new Timer.Timer();
+        dotTimer.start(method(:dotTimerCallback), 1000, true);
     }
 
     // Load your resources here
@@ -63,9 +71,19 @@ class FieldSurveyView extends WatchUi.View {
         View.onUpdate(dc);
 
         var startSelectionText = !surveyInProgress ? "Start" : "P" + (recordCount + 1);
-        if (Position.getInfo().accuracy >= Position.QUALITY_USABLE) {
+        if (!isGpsValid()) {
             startSelectionText = "No GPS";
+            if (noGpsDotCounter == 3) {
+                startSelectionText += "...";
+            } else if (noGpsDotCounter == 2) {
+                startSelectionText += "..";
+            } else {
+                startSelectionText += ".";
+            }
+        } else if (!isApiUrlSet()) {
+            startSelectionText = "No API Url";
         }
+
         point = new WatchUi.Text({
             :text => startSelectionText,
             :color => Graphics.COLOR_WHITE,
@@ -109,5 +127,11 @@ class FieldSurveyView extends WatchUi.View {
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() as Void {
+    }
+
+    // Update dot counter
+    function dotTimerCallback() as Void {
+        noGpsDotCounter = (noGpsDotCounter + 1) % 3 == 0 ? 3 : (noGpsDotCounter + 1) % 3;
+        WatchUi.requestUpdate();
     }
 }

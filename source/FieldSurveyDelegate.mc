@@ -28,27 +28,20 @@ class FieldSurveyDelegate extends WatchUi.BehaviorDelegate {
         return true;
     }
 
+    //! @return true if handled, false otherwise: false handles the system's default actions
     function onKey(keyEvent) as Boolean {
         var key = keyEvent.getKey();
         if (key == WatchUi.KEY_UP) {
             selectedIndex = (selectedIndex - 1 + itemCount) % itemCount;
-            handleUpDownKeys();
         } else if (key == WatchUi.KEY_DOWN) {
-            handleUpDownKeys();
             selectedIndex = (selectedIndex + 1) % itemCount;
         } else if (key == WatchUi.KEY_START || key == WatchUi.KEY_ENTER) {
             onItemClick(selectedIndex);
-            WatchUi.requestUpdate();
         } else {
             return false;
         }
 
-        return true;
-    }
-
-    function handleUpDownKeys() as Void {
-        // Set selected item visibility
-        if (optionCount == 1) {
+         if (optionCount == 1) {
             if (selectedIndex == 0) {
                 _view.startSelected.setVisible(true);
                 _view.option1_1Selected.setVisible(false);
@@ -85,10 +78,16 @@ class FieldSurveyDelegate extends WatchUi.BehaviorDelegate {
                 _view.endSelected.setVisible(true);
             }
         }
+
         WatchUi.requestUpdate();
+        return true;
     }
 
    function onItemClick(index as Number) as Void {
+        if (!isApiUrlSet() && !isGpsValid()) {
+            return;
+        }
+
         if (index == 0) {
             startSurvey();
         } else if (index == itemCount - 1) {

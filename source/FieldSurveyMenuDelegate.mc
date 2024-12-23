@@ -16,7 +16,12 @@ class FieldSurveyMenuDelegate extends WatchUi.MenuInputDelegate {
     // Called when a menu item is selected
     function onMenuItem(item as Symbol) as Void {
         if (item == :item_sync) {
-            extractData(Application.Storage.getValue("data"));
+            var dataValue = Application.Storage.getValue("data");
+            if (dataValue == null || dataValue.equals("")) {
+                return;
+            }
+
+            extractData(dataValue);
 
             var surveys = [];
             for (var i = 0; i < surveyData.size(); i++) {
