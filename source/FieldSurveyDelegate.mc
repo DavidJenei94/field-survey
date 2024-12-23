@@ -107,7 +107,7 @@ class FieldSurveyDelegate extends WatchUi.BehaviorDelegate {
         var surveyName = "FieldSurvey_" + timestamp;
        
         var entry = surveyName + "__FS__id;latitude;longitude;value;date_time";
-        var existingData = Application.Storage.getValue("data");
+        var existingData = Application.Storage.getValue("data") != null ? Application.Storage.getValue("data") : "";
         Application.Storage.setValue("data", existingData + entry);
     }
 

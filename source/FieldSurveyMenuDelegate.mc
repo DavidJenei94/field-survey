@@ -43,7 +43,6 @@ class FieldSurveyMenuDelegate extends WatchUi.MenuInputDelegate {
                 :headers => {
                     "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON
                 },
-                :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_TEXT_PLAIN
             };
             Communications.makeWebRequest(
                 url, 
